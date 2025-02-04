@@ -74,6 +74,7 @@ nav .logo-container {
 		rgb(188, 12, 241),
 		var(--primary-color)
 	);
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	cursor: pointer;
