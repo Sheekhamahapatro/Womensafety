@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--background-color: #ffffff;
+	--black-color: #000000;
+	--primary-color: #e06336;
+	--light-background: #afe7fc;
+	--green: #529651;
+	--light-blue: #1a73e8;
+	--light-text: #2e2f35;
+	--white-color: #fff;
+	--light-color: #ced6e0;
+	--dark-color: #2f3542;
+	--box-shadow: rgb(0 0 2 / 35%) 0px 20px 30px -10px;
+	--menu-color: #151515;
+	--fjalla: "Fjalla One", sans-serif;
+	--railway: "Raleway", sans-serif;
+	--exo: "Exo 2", sans-serif;
+	--philosopher: "Philosopher", sans-serif;
+}
+
+::-moz-selection {
+	background: var(--primary-color);
+	color: white;
+}
+
+::selection {
+	background: var(--primary-color);
+	color: white;
+	border: 2px solid green;
+}
+
+.wrapper {
+	height: 100vh;
+	scroll-behavior: smooth;
+}
+
+/* Nav Bar Css */
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: var(--railway);
+	padding: 20px 40px;
+	border-bottom: #0000006c 1px solid;
+}
+
+nav .header-menu {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 3rem;
+}
+
+nav .logo-container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: var(--fjalla);
+	font-size: 1.5rem;
+	font-weight: 800;
+	background: linear-gradient(
+		to left,
+		rgb(188, 12, 241),
+		var(--primary-color)
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	cursor: pointer;
+}
+
+nav .logo-container img {
+	height: 3rem;
+}
+
+nav .menu ul {
+	list-style: none;
+	display: flex;
+	gap: 25px;
+}
+
+nav .menu ul li a {
+	text-decoration: none;
+	color: var(--light-text);
+	font-size: 1.02rem;
+	font-weight: 800;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+nav .menu ul li::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	background-color: var(--primary-color);
+	bottom: -15px;
+	left: 0;
+	transform: scale(0);
+	transform-origin: left;
+	transition: all 0.2s ease;
+}
+
+nav .menu ul li:hover::after {
+	transform: scale(1);
+}
+
+.dropdown-container {
+	position: relative;
+}
+
+.dropdown a {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.dropdown-items {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 150%;
+	background-color: #fff;
+	padding: 0 1rem 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	display: none;
+	flex-direction: column;
+	z-index: 10;
+}
+
+.dropdown-items div {
+	padding: 0.3rem 5px;
+	margin: 1rem 0;
+	transition: all 0.2s ease;
+}
+
+.dropdown-items div:hover {
+	background-color: var(--light-background);
+	scale: 1.1;
+}
+
+.dropdown-container:hover .dropdown-items {
+	display: block;
+}
+
+.btn-group {
+	display: flex;
+	gap: 1rem;
+}
+
+.btn-group a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	transition: all 0.3s ease;
+}
+
+.btn {
+	background-color: var(--primary-color);
+	box-shadow: 3px 3px 0px 0px #2e2f35;
+	border: 2px solid #2e2f35;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.btn:hover {
+	background-color: var(--light-text);
+}
+
+.btn-group .link {
+	color: var(--light-text);
+	border-radius: 12px;
+	border: 2px solid #2e2f35;
+	background: #fff;
+	box-shadow: 3px 3px 0px 0px #2e2f35;
+}
+
+.btn-group .link:hover {
+	background: var(--primary-color);
+	color: var(--background-color);
+}
+
+/* Footer */
+
+footer {
+	margin-top: 5rem;
+}
+
+footer .foot-top {
+	background-color: #151515;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	padding: 3rem 5rem;
+	font-family: var(--exo);
+	flex-wrap: wrap;
+}
+
+footer .foot-top .logo-info {
+	padding: 20px;
+	width: 30%;
+	min-width: 250px;
+}
+
+footer .foot-top .logo-info .logo-container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+footer .foot-top .logo-info .logo-container h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: rgb(255, 255, 255);
+}
+
+footer .foot-top .logo-info img {
+	height: 5rem;
+}
+
+footer .foot-top .logo-info p {
+	font-size: 1rem;
+	font-weight: 500;
+	margin-top: 1rem;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.foot-nav h4 {
+	margin-top: 2rem;
+	font-size: 1.7rem;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.foot-nav h4::after {
+	content: "";
+	position: absolute;
+	width: 60%;
+	height: 2px;
+	bottom: -5px;
+	left: 0;
+	border-radius: 20px;
+	background-color: var(--primary-color);
+}
+
+.foot-nav ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.foot-nav ul a {
+	color: white;
+	text-decoration: none;
+}
+
+.foot-nav ul a:hover {
+	color: var(--primary-color);
+}
+
+.foot-nav ul li:hover {
+	transform: translateX(10px);
+}
+
+.foot-nav .logo {
+	display: flex;
+	gap: 20px;
+}
+
+.foot-nav .logo a {
+	color: white;
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+.foot-nav .logo a:hover {
+	color: var(--primary-color);
+}
+
+footer .foot {
+	background-color: var(--black-color);
+	padding: 20px;
+}
+
+footer .foot p {
+	color: rgba(255, 255, 255, 0.61);
+	font-family: var(--exo);
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+	nav {
+		padding: 15px 20px;
+	}
+
+	nav .header-menu {
+		gap: 2rem;
+	}
+
+	footer .foot-top {
+		padding: 2rem 3rem;
+	}
+}
+
+@media (max-width: 768px) {
+	nav {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	nav .header-menu {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	nav .menu ul {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	footer .foot-top {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	footer .foot-top .logo-info {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media (max-width: 480px) {
+	nav {
+		padding: 10px 15px;
+	}
+
+	nav .logo-container {
+		font-size: 1.2rem;
+	}
+
+	nav .menu ul li a {
+		font-size: 0.9rem;
+	}
+
+	footer .foot p {
+		font-size: 1rem;
+	}
+}
+
+/* Footer End */

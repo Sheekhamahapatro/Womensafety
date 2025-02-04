@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../assets/styles/main.css" />
+		<link rel="stylesheet" href="../assets/styles/sign-up.css" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+		<title>WomenSafety - Sign Up</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- Navbar -->
+			<nav>
+				<div
+					class="logo-container"
+					onclick="window.location.href='../'"
+				>
+					<!-- <img
+						src="../assets/images/logo/logo.png"
+						alt="web-log"
+						class="logo"
+					/> -->
+					<h1>WomenSafety</h1>
+				</div>
+				<div class="header-menu">
+					<div class="menu">
+						<ul>
+							<!-- <li><a href="#">Home</a></li> -->
+							<li>
+								<a href="#">FAQ's</a>
+							</li>
+							<!-- <li class="dropdown-container">
+								<div class="dropdown">
+									<a href="#"
+										>Other Options
+										<i class="fas fa-angle-down"></i
+									></a>
+								</div>
+								<div class="dropdown-items">
+									<div class="dropdown-links">
+										<a href="#"
+											>Giveaway Book
+											<i class="fa fa-arrow-right"></i
+										></a>
+									</div>
+									<div class="dropdown-links">
+										<a href="#"
+											>Take Book
+											<i class="fa fa-arrow-right"></i
+										></a>
+									</div>
+									<div class="dropdown-links">
+										<a href="#"
+											>Borrow Book
+											<i class="fa fa-arrow-right"></i
+										></a>
+									</div>
+								</div>
+							</li> -->
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+
+					<div class="btn-group">
+						<a href="../login/" class="link">Login</a>
+						<a href="../sign-up/" class="btn"
+							>Sign Up <i class="fa fa-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+			</nav>
+			<!-- Navbar End -->
+
+			<!-- Login Section -->
+
+			<section class="login">
+				<div class="right-section">
+					<img
+						src="../assets/images/signup/women-safety.webp"
+						alt=""
+					/>
+				</div>
+				<div class="left-section">
+					<h2>Not a User?</h2>
+					<p>Join the Revolution: Sign Up Today!</p>
+
+					<form method="post" id="sign-up">
+						<div class="name-flex">
+							<div class="field">
+								<label for="first-name">First Name</label>
+								<input
+									type="text"
+									name="fname"
+									id="first-name"
+									placeholder=""
+									required
+								/>
+							</div>
+							<div class="field">
+								<label for="last-name">Last Name</label>
+								<input
+									type="text"
+									name="lname"
+									id="last-name"
+									placeholder=""
+									required
+								/>
+							</div>
+						</div>
+						<div class="field">
+							<label for="email">Email Address</label>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								placeholder=""
+								required
+							/>
+						</div>
+						<div class="field">
+							<label for="password">Password</label>
+							<input
+								type="password"
+								name="password"
+								id="password"
+								placeholder=""
+								required
+							/>
+						</div>
+						<div class="field">
+							<label for="cpassword">Confirm Password</label>
+							<input
+								type="password"
+								name="cpassword"
+								id="cpassword"
+								placeholder=""
+								required
+							/>
+						</div>
+						<div class="field-flex">
+							<div class="rember">
+								<input
+									type="checkbox"
+									id="rember-me"
+									required
+								/>
+								<label for="rember-me"
+									>Agree with terms and policies?</label
+								>
+							</div>
+						</div>
+						<div class="login-btn">
+							<button>Sign Up</button>
+						</div>
+					</form>
+
+					<div class="sign-Up">
+						Already Have an Account
+						<a href="../login/">Log-In here</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Login Section End-->
+
+			<!-- Footers -->
+			<footer>
+				<div class="foot">
+					<p>&copy; All Right Reserved.</p>
+					<div class="logo">
+						<a href="#"
+							><i class="fa-brands fa-facebook icon"></i
+						></a>
+						<a href="#"><i class="fa-brands fa-github icon"></i></a>
+						<a href="#"
+							><i class="fa-brands fa-instagram icon"></i
+						></a>
+						<a href="#"
+							><i class="fa-brands fa-twitter icon"></i
+						></a>
+					</div>
+				</div>
+			</footer>
+			<!-- Footers End -->
+		</div>
+
+		<script
+			src="https://kit.fontawesome.com/58a810656e.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			$(document).ready(function () {
+				$("#sign-up").submit(function (e) {
+					e.preventDefault();
+					if ($("#password").val() != $("#cpassword").val()) {
+						Swal.fire({
+							icon: "error",
+							title: "Oops...",
+							text: "Password and Confirm Password does not match!",
+						});
+					} else {
+						$.ajax({
+							url: "../serverfile/signup.php",
+							type: "POST",
+							data: $("#sign-up").serialize(),
+							success: function (data) {
+								if (data == "success") {
+									Swal.fire({
+										icon: "success",
+										title: "Success",
+										text: "Account Created Successfully!",
+									});
+									$("#sign-up")[0].reset();
+								} else {
+									Swal.fire({
+										icon: "error",
+										title: "Oops...",
+										text: data + "!",
+									});
+								}
+							},
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

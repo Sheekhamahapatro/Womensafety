@@ -1,0 +1,154 @@
+.login {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	width: 80%;
+	margin: 20px auto;
+	display: flex;
+	gap: 3rem;
+}
+
+.login .left-section {
+	width: 50%;
+	padding: 20px;
+	font-family: var(--exo);
+	margin-left: 3rem;
+}
+
+.left-section h2 {
+	font-size: 2.5rem;
+	font-weight: 900;
+}
+
+.left-section p {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+form {
+	width: 100%;
+	margin-top: 2.5rem;
+}
+
+.field {
+	margin: 15px 0 0;
+}
+.field label {
+	font-family: var(--fjalla);
+	font-size: 1.3rem;
+	font-weight: 500;
+	display: block;
+	margin-bottom: 5px;
+}
+.field input {
+	width: 100%;
+	padding: 12px 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	box-shadow: 3px 3px 0px 0px #2e2f35;
+	border: 2px solid #2e2f35;
+	outline: 0px solid transparent;
+	margin-bottom: 15px;
+	font-size: 1.2rem;
+	font-family: var(--fjalla);
+}
+
+.login .right-section {
+	width: 50%;
+	padding: 10px;
+}
+
+.login .right-section video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 30px;
+	border: none;
+	outline: 0px solid transparent;
+	filter: brightness(0.8);
+}
+
+.field-flex {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 10px;
+}
+
+.field-flex .rember {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	gap: 5px;
+	font-size: 1.2rem;
+}
+
+.field-flex .rember input {
+	width: 15px;
+	height: 15px;
+	margin: 0;
+}
+
+.field-flex a {
+	font-family: var(--fjalla);
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: #2e2f359a;
+	text-decoration: none;
+}
+
+.field-flex a:hover {
+	color: #2e2f35;
+}
+
+.login-btn button {
+	margin-top: 30px;
+	width: 100%;
+	padding: 10px;
+	background-color: var(--primary-color);
+	color: #fff;
+	font-size: 1.2rem;
+	font-family: var(--fjalla);
+	font-weight: 500;
+	border-radius: 5px;
+	box-shadow: 3px 3px 0px 0px #2e2f35;
+	border: 2px solid #2e2f35;
+}
+
+.sign-Up {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 1.1rem;
+}
+
+.sign-Up a {
+	font-size: 1.2rem;
+	font-weight: 500;
+	text-decoration: none;
+	position: relative;
+}
+
+.sign-Up a::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background-color: var(--primary-color);
+	bottom: -5px;
+	left: 0;
+	transform: scale(0);
+	transform-origin: left;
+	transition: all 0.3s ease;
+}
+
+.sign-Up a:hover {
+	color: var(--primary-color);
+}
+
+.sign-Up a:hover::after {
+	transform: scale(1);
+}
