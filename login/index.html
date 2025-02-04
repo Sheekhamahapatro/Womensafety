@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../assets/styles/main.css" />
+		<link rel="stylesheet" href="../assets/styles/login.css" />
+		<title>WomenSafety - Login</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- Navbar -->
+			<nav>
+				<div
+					class="logo-container"
+					onclick="window.location.href='../'"
+				>
+					<!-- <img
+						src="../assets/images/logo/logo.png"
+						alt="web-log"
+						class="logo"
+					/> -->
+					<h1>Women Safety</h1>
+				</div>
+				<div class="header-menu">
+					<div class="menu">
+						<ul>
+							<!-- <li><a href="#">Home</a></li> -->
+							<li>
+								<a href="#">FAQ's</a>
+							</li>
+							<!-- <li class="dropdown-container">
+								<div class="dropdown">
+									<a href="#"
+										>Other Options
+										<i class="fas fa-angle-down"></i
+									></a>
+								</div>
+								<div class="dropdown-items">
+									<div class="dropdown-links">
+										<a href="../book-exchange/"
+											>Giveaway Book
+											<i class="fa fa-arrow-right"></i
+										></a>
+									</div>
+									<div class="dropdown-links">
+										<a href="#"
+											>Take Book
+											<i class="fa fa-arrow-right"></i
+										></a>
+									</div>
+									<div class="dropdown-links">
+										<a href="../book-exchange/"
+											>Borrow Book
+											<i class="fa fa-arrow-right"></i
+										></a>
+									</div>
+								</div>
+							</li> -->
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+
+					<div class="btn-group">
+						<a href="./" class="link">Login</a>
+						<a href="../sign-up/" class="btn"
+							>Sign Up <i class="fa fa-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+			</nav>
+			<!-- Navbar End -->
+
+			<!-- Login Section -->
+
+			<section class="login">
+				<div class="left-section">
+					<h2>Welcome Back</h2>
+					<p>Enter the information you entered while registering</p>
+
+					<form action="">
+						<div class="field">
+							<label for="email">Email Address</label>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								placeholder=""
+								required
+							/>
+						</div>
+						<div class="field">
+							<label for="password">Password</label>
+							<input
+								type="password"
+								name="password"
+								id="password"
+								placeholder=""
+								required
+							/>
+						</div>
+						<div class="field-flex">
+							<div class="rember">
+								<input type="checkbox" id="rember-me" />
+								<label for="rember-me">Remember Me</label>
+							</div>
+							<a href="#">Forget your password?</a>
+						</div>
+						<div class="login-btn">
+							<button>Log In</button>
+						</div>
+					</form>
+
+					<div class="sign-Up">
+						Don't have an Account
+						<a href="../sign-up/">Sign-Up here</a>
+					</div>
+				</div>
+				<div class="right-section">
+					<video
+						src="../assets/video/books.mp4"
+						autoplay
+						muted
+						loop
+					></video>
+				</div>
+			</section>
+
+			<!-- Login Section End-->
+
+			<!-- Footers -->
+			<footer>
+				<div class="foot">
+					<p>&copy; All Right Reserved.</p>
+					<div class="logo">
+						<a href="#"
+							><i class="fa-brands fa-facebook icon"></i
+						></a>
+						<a href="#"><i class="fa-brands fa-github icon"></i></a>
+						<a href="#"
+							><i class="fa-brands fa-instagram icon"></i
+						></a>
+						<a href="#"
+							><i class="fa-brands fa-twitter icon"></i
+						></a>
+					</div>
+				</div>
+			</footer>
+			<!-- Footers End -->
+		</div>
+
+		<script
+			src="https://kit.fontawesome.com/58a810656e.js"
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			$(document).ready(function () {
+				$(".login-btn button").click(function (e) {
+					e.preventDefault();
+					var email = $("#email").val();
+					var password = $("#password").val();
+					if (email == "" || password == "") {
+						Swal.fire({
+							icon: "error",
+							title: "Oops...",
+							text: "Please fill all the fields!",
+						});
+					} else {
+						$.ajax({
+							url: "../serverfile/login.php",
+							type: "POST",
+							data: {
+								email: email,
+								password: password,
+							},
+							success: function (data) {
+								if (data == "success") {
+									Swal.fire({
+										icon: "success",
+										title: "Success",
+										text: "Login Successful!",
+									}).then((result) => {
+										if (result.isConfirmed) {
+											window.location.href =
+												"../config/userVerification.php";
+										}
+									});
+								} else {
+									Swal.fire({
+										icon: "error",
+										title: "Oops...",
+										text: data,
+									}).then((result) => {
+										if (
+											result.isConfirmed &&
+											data ==
+												"Email not found! Please register first."
+										) {
+											window.location.href =
+												"../sign-up/";
+										}
+									});
+								}
+							},
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
