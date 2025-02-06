@@ -1,11 +1,483 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women Saftey</title>
-</head>
-<body>
-    <h1>Women Saftey</h1>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Swiper Import -->
+		<link
+			rel="stylesheet"
+			href="./assets/plugins/swiper/swiper-bundle.min.css"
+		/>
+		<!-- Main Css -->
+		<link rel="stylesheet" href="./assets/styles/main.css" />
+		<link rel="stylesheet" href="./assets/styles/home.css" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="./assets/images/favicon_io/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon_io/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./assets/images/favicon_io/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="./assets/images/favicon_io/site.webmanifest"
+		/>
+
+		<title>HerShield - Homepage</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- Navbar -->
+			<nav>
+				<div class="logo-container" onclick="window.location.href='./'">
+					<img
+						src="./assets/images/logo/logo.png"
+						alt="web-log"
+						class="logo"
+					/>
+					<h1>HerShield</h1>
+				</div>
+				<div class="header-menu">
+					<div class="menu">
+						<ul>
+							<li>
+								<a class="btn-emergency">Emergency</a>
+							</li>
+							<li>
+								<a href="./#">Self-Defense</a>
+							</li>
+							<li><a href="./#">FAQ</a></li>
+							<li><a href="./contact-us">Contact Us</a></li>
+						</ul>
+					</div>
+
+					<!-- <?php
+                            if(isset($_SESSION['user_id'])) {
+                                echo '<div class="btn-group">
+                                        <a href="./user/" class="btn">DashBoard <i class="fa fa-arrow-right"></i> </a>
+                                    </div>';
+                            } else {
+                                echo '<div class="btn-group">
+                                        <a href="./login/" class="link">Login</a>
+                                        <a href="./sign-up/" class="btn">Sign Up <i class="fa fa-arrow-right"></i> </a>
+                                    </div>';
+                            }
+                        ?> -->
+					<div class="btn-group">
+						<a href="./login/" class="link">Login</a>
+						<a href="./sign-up/" class="btn"
+							>Sign Up <i class="fa fa-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+			</nav>
+			<!-- Navbar End -->
+
+			<!-- Header Section -->
+			<header>
+				<div class="right-side">
+					<h2>
+						Empower. <span>Protect.</span> Connect.
+						<span>Stay Safe.</span>
+					</h2>
+					<p>
+						Welcome to HerShield, a platform dedicated to women's
+						safety and empowerment. Whether you're commuting,
+						traveling, or at home, our tools provide real-time
+						emergency assistance, self-defense resources, and a
+						supportive community.
+					</p>
+					<p>
+						"Join a network of strong, fearless women. Stay
+						protected, stay informed, and take control of your
+						safety. Together, we create a world where every woman
+						feels secure and empowered."
+					</p>
+					<div class="button-header-group">
+						<button onclick="window.location.href='./sign-up'">
+							Emergency Assistance
+						</button>
+					</div>
+				</div>
+				<div class="left-side">
+					<script
+						src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+						type="module"
+					></script>
+					<dotlottie-player
+						src="https://lottie.host/51c60e79-e8f8-49f7-b2b0-0aec210713ba/sKJpCJXuqv.lottie"
+						background="transparent"
+						speed="1"
+						loop
+						autoplay
+					></dotlottie-player>
+				</div>
+			</header>
+			<!-- Header Section End -->
+
+			<!-- About Section -->
+			<section class="about">
+				<h2>
+					Behind the Mission: <br />
+					Our Commitment to Women’s Safety
+				</h2>
+				<div class="about-section">
+					<div class="right-about-section">
+						<iframe
+							width="560"
+							height="315"
+							src="https://www.youtube.com/embed/q1pBBRi3XF8?si=rug1_DVJ4p3TGYYU"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
+					</div>
+					<div class="left-about-section">
+						<h3>Our Mission</h3>
+						<p>
+							At HerShield, our mission is clear: to empower,
+							protect, and support women in every situation. We
+							believe that safety is a fundamental right, not a
+							privilege. Our platform is designed to provide
+							instant emergency assistance, self-defense
+							knowledge, and a strong community where women can
+							share experiences, seek help, and stand together.
+							<br />
+							<br />
+							We are committed to fostering a world where women
+							feel secure, confident, and connected. By using
+							technology, education, and community support, we aim
+							to reduce fear, promote self-reliance, and create a
+							safer society. Join us in making a
+							difference—because every woman deserves to feel
+							safe, no matter where she is.
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- About Section End -->
+
+			<!-- Vision Section -->
+			<section class="vision">
+				<h2>
+					Shaping the Future of <br />
+					Women’s Safety
+				</h2>
+				<div class="vision-container">
+					<div class="vision-left">
+						<h3>Our Vision</h3>
+						<p>
+							At HerShield, we envision a world where every woman
+							feels safe, empowered, and supported. Our vision is
+							straightforward yet transformative: to create
+							universal access to safety resources, foster strong
+							and resilient communities, promote self-defense
+							education, and celebrate the power of women
+							supporting women. We are committed to breaking
+							barriers, reducing fear, and empowering women to
+							take control of their own safety. By using
+							technology, education, and a global network of
+							support, we strive to create a future where safety
+							is a shared responsibility, and every woman has the
+							tools and confidence to protect herself. Join us in
+							shaping a world where safety, empowerment, and
+							solidarity go hand in hand. Together, we’re creating
+							a safer future for women, one step at a time.
+						</p>
+					</div>
+					<div class="vision-right">
+						<img
+							src="./assets/images/homepage/woment1.webp"
+							alt=""
+						/>
+						<img
+							src="./assets/images/homepage/woment2.jpg"
+							alt=""
+						/>
+						<img src="./assets/images/homepage/women3.jpg" alt="" />
+					</div>
+				</div>
+			</section>
+			<!-- Vision Section End -->
+
+			<!-- Feature Book -->
+
+			<section class="feature-book">
+				<h2>Discover Our Featured Books</h2>
+				<div class="all-books">
+					<div class="book">
+						<img
+							src="./assets/images/books/atomic-habits.webp"
+							alt=""
+						/>
+						<h3>Atomic Habits</h3>
+						<p>
+							"Atomic Habits" is a bestselling book by James Clear
+							that reveals how tiny changes can lead to remarkable
+							results. It's a practical guide to building better
+							habits, breaking bad ones....
+						</p>
+						<button>View Details</button>
+					</div>
+					<div class="book">
+						<img
+							src="./assets/images/books/atomic-habits.webp"
+							alt=""
+						/>
+						<h3>Atomic Habits</h3>
+						<p>
+							"Atomic Habits" is a bestselling book by James Clear
+							that reveals how tiny changes can lead to remarkable
+							results. It's a practical guide to building better
+							habits, breaking bad ones....
+						</p>
+						<button>View Details</button>
+					</div>
+					<div class="book">
+						<img
+							src="./assets/images/books/atomic-habits.webp"
+							alt=""
+						/>
+						<h3>Atomic Habits</h3>
+						<p>
+							"Atomic Habits" is a bestselling book by James Clear
+							that reveals how tiny changes can lead to remarkable
+							results. It's a practical guide to building better
+							habits, breaking bad ones....
+						</p>
+						<button>View Details</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- Feature Books End Here -->
+
+			<!-- Testimonial -->
+			<div id="page" class="site">
+				<div class="container">
+					<div class="testi">
+						<div class="head">
+							<h3>Voices of our Book-Loving Community</h3>
+						</div>
+						<div class="body swiper">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<div class="testimonial-wrapper">
+										<div class="thumbnail">
+											<img
+												src="./assets/images/testmonial/user-img1.webp"
+												alt=""
+											/>
+										</div>
+										<div class="aside">
+											<p>
+												I'm absolutely thrilled with
+												ReadRipple! This platform has
+												transformed my reading
+												experience. It's like a treasure
+												chest of books waiting to be
+												discovered. The book exchange
+												process is seamless, and I've
+												found some incredible gems that
+												I wouldn't have come across
+												otherwise. Plus, it feels great
+												to be part of a community that
+												shares the same love for
+												reading. I can't recommend
+												ReadRipple enough
+											</p>
+											<div class="name">
+												<h4>Jane Smith</h4>
+												<p>London, United Kingdom</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="testimonial-wrapper">
+										<div class="thumbnail">
+											<img
+												src="./assets/images/testmonial/user-img2.webp"
+												alt=""
+											/>
+										</div>
+										<div class="aside">
+											<p>
+												I've been an avid reader for
+												years, but ReadRipple has taken
+												my reading experience to a whole
+												new level. It's incredibly
+												user-friendly, and I've found it
+												so easy to connect with fellow
+												book enthusiasts. The ability to
+												borrow books has expanded my
+												reading horizons, and I love
+												that this platform promotes
+												sustainability by encouraging
+												book sharing. It's a win-win for
+												readers and the environment!
+											</p>
+											<div class="name">
+												<h4>Emily Parker</h4>
+												<p>Seattle, Washington</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="testimonial-wrapper">
+										<div class="thumbnail">
+											<img
+												src="./assets/images/testmonial/user-img3.webp"
+												alt=""
+											/>
+										</div>
+										<div class="aside">
+											<p>
+												I stumbled upon [Your Platform
+												Name] a few months ago, and it
+												has become an essential part of
+												my reading routine. The
+												platform's search and
+												recommendation features make it
+												a breeze to find books that
+												match my interests. I've not
+												only discovered fantastic reads
+												but also made friends with
+												fellow book lovers in my area.
+												It's like having an extensive
+												library and a book club rolled
+												into one. Kudos to the team
+												behind this wonderful platform!
+											</p>
+											<div class="name">
+												<h4>John Doe</h4>
+												<p>San Francisco, California</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="swiper-slide">
+									<div class="testimonial-wrapper">
+										<div class="thumbnail">
+											<img
+												src="./assets/images/testmonial/user-img5.webp"
+												alt=""
+											/>
+										</div>
+										<div class="aside">
+											<p>
+												I've always believed in the
+												magic of books, and [Your
+												Platform Name] amplifies that
+												magic tenfold. The community
+												here is incredible, and the
+												sense of sharing and camaraderie
+												among readers is heartwarming.
+												I've received book
+												recommendations I would have
+												never stumbled upon otherwise,
+												and the book exchange system is
+												a game-changer. Thanks to this
+												platform, I've not only expanded
+												my personal library but also my
+												circle of book-loving friends.
+											</p>
+											<div class="name">
+												<h4>Alex Turner</h4>
+												<p>Toronto, Canada</p>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="swiper-pagination"></div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Testimonial Ends Here -->
+
+			<!-- Footers -->
+			<footer>
+				<div class="foot-top">
+					<div class="logo-info">
+						<div class="logo-container">
+							<img src="./assets/images/logo/logo.png" alt="" />
+							<h2>ReadRipple</h2>
+						</div>
+						<p>
+							ReadRipple is a global community of book lovers,
+							where every book finds its reader, and every reader
+							discovers a welcoming community. Join us in the
+							delightful exchange of stories and ideas. Start
+							exploring today.
+						</p>
+					</div>
+					<div class="foot-nav">
+						<h4>Company</h4>
+						<ul>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Terms Of Use</a></li>
+						</ul>
+					</div>
+					<div class="foot-nav">
+						<h4>Get Help</h4>
+						<ul>
+							<li><a href="#">Contact Us</a></li>
+							<li><a href="#">Knowledge Base</a></li>
+							<li><a href="#">Community</a></li>
+						</ul>
+					</div>
+					<div class="foot-nav">
+						<h4>Follow Us</h4>
+						<div class="logo">
+							<a href="#"
+								><i class="fa-brands fa-facebook icon"></i
+							></a>
+							<a href="#"
+								><i class="fa-brands fa-github icon"></i
+							></a>
+							<a href="#"
+								><i class="fa-brands fa-instagram icon"></i
+							></a>
+							<a href="#"
+								><i class="fa-brands fa-twitter icon"></i
+							></a>
+						</div>
+					</div>
+				</div>
+				<div class="foot">
+					<p>&copy; 2023 All Right Received - ReadRipple</p>
+				</div>
+			</footer>
+			<!-- Footers End -->
+		</div>
+		<script
+			src="https://kit.fontawesome.com/58a810656e.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+		<script src="./assets/plugins/swiper/swiper-bundle.min.js"></script>
+		<script src="./assets/js/swiper.js"></script>
+	</body>
 </html>

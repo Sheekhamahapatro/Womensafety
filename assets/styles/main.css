@@ -99,6 +99,22 @@ nav .menu ul li a {
 	position: relative;
 }
 
+nav .menu ul li a.btn-emergency {
+	outline: none;
+	background-color: var(--primary-color);
+	color: white;
+	padding: 10px 40px;
+	font-size: 1rem;
+	font-weight: 500;
+	border-radius: 10px;
+	border: 1px solid #2e2f35;
+	box-shadow: 2px 2px 0px 0px #2e2f35;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 1;
+}
+
 nav .menu ul li::after {
 	content: "";
 	position: absolute;
